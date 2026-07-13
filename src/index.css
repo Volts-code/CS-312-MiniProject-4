@@ -83,19 +83,19 @@ label {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 24px;
-  margin-bottom: 22px;
+  padding: 28px;
+  margin-bottom: 34px;
   background: #ffffff;
-  border: 1px solid #dbe3ef;
-  border-left: 5px solid #2563eb;
+  border: 2px solid #111827;
+  border-left: 8px solid #111827;
   border-radius: 8px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  box-shadow: 8px 8px 0 #111827, 0 14px 30px rgba(15, 23, 42, 0.16);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 #111827, 0 18px 38px rgba(15, 23, 42, 0.2);
 }
 
 .blog-title {
@@ -134,9 +134,9 @@ label {
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  padding-top: 14px;
-  margin-top: 8px !important;
-  border-top: 1px solid #e5e7eb;
+  padding-top: 18px;
+  margin-top: 14px;
+  border-top: 2px solid #111827;
 }
 
 .blog-card .btn,
