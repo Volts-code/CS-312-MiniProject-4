@@ -1,0 +1,100 @@
+body {
+  background-color: #f4f9ff;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0d6efd;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white;
+}
+
+/* Page Titles */
+.page-title {
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 25px;
+}
+
+
+
+/* Blog Cards */
+.blog-card {
+  background-color: white;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0px 4px 10px rgba(13, 110, 253, 0.15);
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+
+/* Post Title */
+.blog-title {
+  color: #0d6efd;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Post Content */
+.blog-body {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Author */
+.blog-author {
+  color: #555;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* Forms */
+.form-container {
+  max-width: 550px;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #dbeafe;
+  box-shadow: 0px 4px 10px rgba(13,110,253,0.15);
+}
+
+
+/* Buttons */
+button {
+  margin-right: 15px;
+  background-color: #0d6efd;
+}
+
+/* Edit Button */
+.btn-warning {
+  margin-right: 15px;
+}
+
+/* Delete Button */
+.btn-danger {
+  margin-left: 15px;
+}
+
+
+/* Mobile */
+@media(max-width:768px){
+  .blog-card {
+    padding: 18px;
+  }
+
+  .blog-title {
+    font-size:20px;
+  }
+}

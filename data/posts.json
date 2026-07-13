@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to My Blog",
+    "body": "This is my first blog post using React and Node.js.",
+    "author": "student"
+  },
+  {
+    "id": 2,
+    "title": "Learning React",
+    "body": "React components make it easier to organize web applications.",
+    "author": "student"
+  }
+]
