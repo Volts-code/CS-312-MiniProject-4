@@ -1,4 +1,4 @@
-import pool from "../db";
+import pool from "../db.js";
 
 function send(res, statusCode, data) {
   res.statusCode = statusCode;
@@ -26,14 +26,30 @@ function readBody(req) {
   });
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   const url = new URL(req.url, "https://example.com");
   const path = url.pathname.replace(/^\/api/, "") || "/";
   const method = req.method;
 
   try {
     if (method === "GET" && path === "/") {
-      return send(res, 200, { message: "Blog API is running" });
+      return send(res, 200, {
+        message: "Blog API is running"
+      });
+    }
+
+    if (method === "GET" && path === "/posts") {
+      const result = await pool.query(`
+        SELECT
+          blog_id AS id,
+          title,
+          body,
+          creator_user_id AS author
+        FROM blogs
+        ORDER BY blog_id DESC
+      `);
+
+      return send(res, 200, result.rows);
     }
 
     if (method === "POST" && path === "/signup") {
@@ -83,20 +99,6 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    if (method === "GET" && path === "/posts") {
-      const result = await pool.query(`
-        SELECT
-          blog_id AS id,
-          title,
-          body,
-          creator_user_id AS author
-        FROM blogs
-        ORDER BY blog_id DESC
-      `);
-
-      return send(res, 200, result.rows);
-    }
-
     const postMatch = path.match(/^\/posts\/([^/]+)$/);
 
     if (postMatch && method === "GET") {
@@ -114,7 +116,9 @@ module.exports = async function handler(req, res) {
       );
 
       if (result.rows.length === 0) {
-        return send(res, 404, { message: "Post not found" });
+        return send(res, 404, {
+          message: "Post not found"
+        });
       }
 
       return send(res, 200, result.rows[0]);
@@ -210,11 +214,14 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    return send(res, 404, { message: "Route not found" });
+    return send(res, 404, {
+      message: "Route not found"
+    });
   } catch (error) {
     return send(res, 500, {
       message: "Server error",
-      error: error.message
+      error: error.message,
+      stack: error.stack
     });
   }
-};
+}
