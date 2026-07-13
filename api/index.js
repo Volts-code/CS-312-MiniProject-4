@@ -1,4 +1,4 @@
-const pool = require("../db");
+import pool from "../db";
 
 function send(res, statusCode, data) {
   res.statusCode = statusCode;
