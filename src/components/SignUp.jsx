@@ -49,7 +49,7 @@ function SignUp() {
             <form onSubmit={handleSubmit}>
 
                 <label>
-                User ID
+                    User ID
                 </label>
 
                 <input
@@ -61,7 +61,7 @@ function SignUp() {
                 />
 
                 <label>
-                Name
+                    Name
                 </label>
 
                 <input
@@ -72,12 +72,9 @@ function SignUp() {
                     required
                 />
 
-
-
                 <label>
-                Password
+                    Password
                 </label>
-
 
                 <input
                     type="password"
@@ -87,8 +84,6 @@ function SignUp() {
                     required
                 />
 
-
-
                 <button 
                 className="btn btn-primary"
                 type="submit"
@@ -97,8 +92,6 @@ function SignUp() {
                 </button>
 
             </form>
-
-
 
             {
                 message &&
