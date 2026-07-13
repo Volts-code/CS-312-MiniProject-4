@@ -49,7 +49,7 @@ function EditPost() {
 
         try {
             const response = await axios.put(
-                `http://localhost:8000/posts/${id}`,
+                `/api/posts/${id}`,
                 updatedPost
             );
 
