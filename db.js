@@ -4,5 +4,3 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: true },
     port: 5432
 });
-
-module.exports = pool;
