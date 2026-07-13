@@ -1,11 +1,10 @@
-CREATE TABLE users(
+CREATE TABLE IF NOT EXISTS users(
     user_id VARCHAR(255) PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL
 );
 
-/*Blogs table*/
-CREATE TABLE blogs(
+CREATE TABLE IF NOT EXISTS blogs(
     blog_id SERIAL PRIMARY KEY,
     creator_name VARCHAR(255),
     creator_user_id VARCHAR(255),
@@ -20,7 +19,8 @@ INSERT INTO users(user_id,password,name)
 VALUES
 ('john','1234','John Smith'),
 ('alice','1234','Alice Brown'),
-('david','1234','David Wilson');
+('david','1234','David Wilson')
+ON CONFLICT (user_id) DO NOTHING;
 
 INSERT INTO blogs
 (creator_name,creator_user_id,title,body)
