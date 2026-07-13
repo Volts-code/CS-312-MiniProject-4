@@ -6,8 +6,6 @@ function BlogPostForm() {
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("");
 
-
-
   async function handleSubmit(e) {
         e.preventDefault();
         const user = localStorage.getItem("user");
@@ -45,10 +43,6 @@ function BlogPostForm() {
                 setMessage("Server error");
             }
     }
-
-
-
-
 
     return (
 
